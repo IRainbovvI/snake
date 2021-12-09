@@ -1,0 +1,40 @@
+.container {
+  text-align: center;
+  margin: 1vw;
+}
+
+.cell-0 {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 1px;
+  background-color: black;
+}
+
+.cell-1 {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 1px;
+  background-color: green;
+}
+
+.cell-2 {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 1px;
+  background-color: rgb(0, 204, 0);
+}
+
+.cell-3 {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 1px;
+  background-color: rgb(122, 0, 204);
+}
+
+.row {
+  margin-top: -5px;
+}
