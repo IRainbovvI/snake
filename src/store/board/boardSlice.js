@@ -3,7 +3,13 @@ import data from '../../data';
 
 export const boardSlice = createSlice({
   name: 'board',
-  initialState: { board: data, tail: 3, side: 3, gameState: 1 },
+  initialState: {
+    board: data,
+    tail: 3,
+    side: 3,
+    switchingSide: 0,
+    gameState: 1
+  },
   /* 
   side:
   0 - left
@@ -90,12 +96,23 @@ export const boardSlice = createSlice({
           console.log('Oh man, you broke it, again');
           break;
       }
+      state.switchingSide = 0;
     },
     gameOver: (state) => {
       gOver(state);
     },
     switchSide: (state, action) => {
-      state.side = action.payload;
+      const direction = action.payload;
+      if (direction === 0 || direction === 2) {
+        if (state.side !== 0 && state.side !== 2) {
+          state.side = direction;
+        }
+      } else {
+        if (state.side !== 1 && state.side !== 3) {
+          state.side = direction;
+        }
+      }
+      state.switchingSide = 1;
     }
   }
 });
